@@ -170,27 +170,4 @@ public class DatesTest {
         assertThrows(IllegalArgumentException.class, () ->
                 getInterval(specificLocalDateTime, specificLocalDateTime.minusDays(1), ChronoUnit.HOURS), "Start date is after end date.");
     }
-
-    @Test
-    void getPeriodWithLocalDateTest() {
-        assertEquals(30, getPeriod(specificLocalDate, specificLocalDate.plusDays(30), ChronoUnit.DAYS));
-        assertEquals(30, getPeriod(specificLocalDate, specificLocalDate.plusMonths(30), ChronoUnit.MONTHS));
-        assertEquals(30, getPeriod(specificLocalDate, specificLocalDate.plusYears(30), ChronoUnit.YEARS));
-
-        assertThrows(NullPointerException.class, () -> getPeriod(null, specificLocalDate, ChronoUnit.DAYS), "Start date is null.");
-        assertThrows(NullPointerException.class, () -> getPeriod(specificLocalDate, null, ChronoUnit.DAYS), "End date is null.");
-        assertThrows(NullPointerException.class, () -> getPeriod(null, specificLocalDate, null), "ChronoUnit is null.");
-    }
-
-    @Test
-    void getPeriodWithLocalDateTimeTest() {
-        assertEquals(30, getPeriod(specificLocalDateTime, specificLocalDateTime.plusDays(30), ChronoUnit.DAYS));
-        assertEquals(30, getPeriod(specificLocalDateTime, specificLocalDateTime.plusHours(30), ChronoUnit.HOURS));
-        assertEquals(30, getPeriod(specificLocalDateTime, specificLocalDateTime.plusMinutes(30), ChronoUnit.MINUTES));
-        assertEquals(30, getPeriod(specificLocalDateTime, specificLocalDateTime.plusSeconds(30), ChronoUnit.SECONDS));
-
-        assertThrows(NullPointerException.class, () -> getPeriod(null, specificLocalDate, ChronoUnit.DAYS), "Start date is null.");
-        assertThrows(NullPointerException.class, () -> getPeriod(specificLocalDate, null, ChronoUnit.DAYS), "End date is null.");
-        assertThrows(NullPointerException.class, () -> getPeriod(null, specificLocalDate, null), "ChronoUnit is null.");
-    }
 }
