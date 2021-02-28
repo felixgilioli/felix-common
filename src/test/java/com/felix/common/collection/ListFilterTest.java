@@ -7,6 +7,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class ListFilterTest {
 
     @Test
@@ -19,6 +22,7 @@ public class ListFilterTest {
 
         Optional<Person> next = listFilter.next(1);
 
-        System.out.println(next.get());
+        assertTrue(next.isPresent());
+        assertEquals("Felix", next.get().getName());
     }
 }

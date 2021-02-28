@@ -8,18 +8,22 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class SetFilterTest {
 
     @Test
     void nextTest() {
-        Set<Person> set = new HashSet<>(Arrays.asList(new Person(1, "tua"),
-                new Person(2, "tia")));
+        Set<Person> set = new HashSet<>(Arrays.asList(new Person(1, "Felix"),
+                new Person(2, "Ricardo")));
 
         SetFilter<Person, Integer> setFilter = SetFilter.of(set)
                 .compareWith(Person::getId);
 
         Optional<Person> next = setFilter.next(1);
 
-        System.out.println(next.get());
+        assertTrue(next.isPresent());
+        assertEquals("Felix", next.get().getName());
     }
 }
