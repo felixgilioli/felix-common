@@ -13,16 +13,16 @@ import java.util.function.Predicate;
 public class Collections {
 
     /**
-     * Returns true if collection {@param c} is null or empty.
+     * Returns true if collection c is null or empty.
      * @param c collection.
-     * @return true if collection {@param c} is null or empty.
+     * @return true if collection c is null or empty.
      */
     public static boolean isNullOrEmpty(Collection<?> c) {
         return c == null || c.isEmpty();
     }
 
     /**
-     * Contains any object with condition {@param predicate}.
+     * Contains any object with condition predicate.
      * @param c collection.
      * @param predicate condition.
      * @param <T> generic type of collection.
@@ -41,7 +41,7 @@ public class Collections {
      * </code></pre>
      * @param keyExtractor returns the property to distinct.
      * @param <T> generic type of object.
-     * @return {@link Predicate<T>} to use in a filter method.
+     * @return {@link Predicate} to use in a filter method.
      */
     public static <T> Predicate<T> distinctBy(Function<? super T, ?> keyExtractor) {
         Set<Object> seen = ConcurrentHashMap.newKeySet();

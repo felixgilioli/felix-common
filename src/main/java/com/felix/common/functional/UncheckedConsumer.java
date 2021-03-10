@@ -10,11 +10,6 @@ public interface UncheckedConsumer<T, E extends Throwable> {
 
     void accept(T t) throws E;
 
-    /**
-     * Method to returns a instance of {@link UncheckedConsumer}.
-     * @param consumer consumer.
-     * @return instance of {@link UncheckedConsumer}.
-     */
     static <T, E extends Throwable> Consumer<T> unchecked(UncheckedConsumer<T, E> consumer) {
         return (t) -> {
             try {

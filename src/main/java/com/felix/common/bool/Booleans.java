@@ -6,9 +6,9 @@ package com.felix.common.bool;
 public class Booleans {
 
     /**
-     * Returns Boolean.FALSE if {@param b} is null.
+     * Returns Boolean.FALSE if b is null.
      * @param b boolean.
-     * @return Boolean.FALSE if {@param b} is null.
+     * @return Boolean.FALSE if b is null.
      */
     public static Boolean falseIfNull(Boolean b) {
         return b == null ? Boolean.FALSE : b;
